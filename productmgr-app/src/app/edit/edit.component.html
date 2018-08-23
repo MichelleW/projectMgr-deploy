@@ -1,0 +1,30 @@
+<div *ngIf="product">
+  product: {{product._id}}
+      <h2>Edit Product</h2>
+<div class="alert alert-danger" *ngIf="msg">
+  {{msg}} 
+</div>
+      <form (submit)="update(productId)">
+        Title: <input type="text" [(ngModel)]="product.title" name="product.title" class="form-control">
+         
+        Price  <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">$</div>
+              </div>
+              <input type="price" [(ngModel)]="product.price" name="product.price" class="form-control" >
+            </div>
+      
+        Image Url <input type="text" [(ngModel)]="product.imgUrl" name="product.imgUrl" class="form-control mb-5">
+          
+        <input type="submit" class="btn btn-primary mr-2" value="Update" >
+        <a (click)="delete(product._id)" class="btn btn-primary text-white">Delete</a>
+     
+      </form>
+     
+        
+      
+
+ 
+
+      <router-outlet></router-outlet>
+</div>

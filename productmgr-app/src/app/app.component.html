@@ -1,0 +1,15 @@
+<div class="box">
+  <h1 class="text-center">
+    Welcome to my Esty / Pinterest Market Place
+
+  </h1>
+  <p>App component page</p>
+  <a [routerLink]="['/home']" class="btn btn-primary mr-1"> Home </a>
+  <a [routerLink]="['/products']" class="btn btn-primary mr-1"> Product List </a>
+  <!-- <a [routerLink]="['products/:list','product']" class="btn btn-primary mr-1">Product List</a> -->
+  <a [routerLink]="['/new']" class="btn btn-primary mr-1">Product Creation</a>
+
+
+  <router-outlet></router-outlet>
+
+</div>

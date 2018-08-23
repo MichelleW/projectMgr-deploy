@@ -1,0 +1,29 @@
+<div class="box" *ngIf="newProductObj">
+ 
+  <h2>Create a New Product</h2>
+  
+  <div class="alert alert-danger" *ngIf="errMsg.price">{{errMsg.price.message}}</div>
+  <div class="alert alert-danger" *ngIf="errMsg.title">{{errMsg.title.message}}</div>
+ 
+  <form (submit)="createNew()">
+    Title:
+    <input type="text" [(ngModel)]="newProductObj.title" name="newProductObj.title" class="form-control"> Price
+    <div class="input-group mb-2">
+      <div class="input-group-prepend">
+        <div class="input-group-text">$</div>
+      </div>
+      <input type="price" [(ngModel)]="newProductObj.price" name="newProductObj.price" class="form-control">
+    </div>
+
+    Image Url
+    <input type="text" [(ngModel)]="newProductObj.imgUrl" name="newProductObj.imgUrl" class="form-control mb-5">
+
+    <input type="submit" class="btn btn-primary mr-1" value="Create">
+
+    <a [routerLink]="['/products']" class="btn btn-primary mr-1">Cancel</a>
+
+  </form>
+ 
+  <router-outlet></router-outlet>
+
+</div>
